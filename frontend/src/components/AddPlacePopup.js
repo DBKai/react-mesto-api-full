@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import useFormAndValidation from "../hooks/useFormAndValidation";
 
 function AddPlacePopup({isOpen, onClose, onAddPlace}) {
-  const { values, handleChange, errors, isValid, setValues, resetForm } = useFormAndValidation();
+  const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
   const nameInputClassName = (`popup__item ${errors?.name && "popup__item-error_active"}`);
   const nameErrorClassName = (`popup__item-error ${errors?.name && "popup__item_type_error"}`);
   const linkInputClassName = (`popup__item ${errors?.link && "popup__item-error_active"}`);

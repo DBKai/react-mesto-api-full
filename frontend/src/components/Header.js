@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import {Link, Route, Routes, useLocation} from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import logo from "../images/logo.svg";
 import NavBar from "./NavBar";
 
 function Header({ loggedIn, email, onLogout }) {
-  const location = useLocation();
-  const signup = location.pathname === "/sign-up";
   const [windowDimension, setWindowDimension] = useState({
     winWidth: window.innerWidth,
     winHeight: window.innerHeight,
@@ -67,11 +65,11 @@ function Header({ loggedIn, email, onLogout }) {
                     onClick={handleMobileMenu} /> }
               </>
             }/>
-            <Route path="/sign-in" element={
-              <Link to="/sign-up" className="header__link">Зарегистрироваться</Link>
+            <Route path="/signin" element={
+              <Link to="/signup" className="header__link">Зарегистрироваться</Link>
             }/>
-            <Route path="/sign-up" element={
-              <Link to="/sign-in" className="header__link">Войти</Link>
+            <Route path="/signup" element={
+              <Link to="/signin" className="header__link">Войти</Link>
             }/>
           </Routes>
         </div>

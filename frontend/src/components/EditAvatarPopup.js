@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import useFormAndValidation from "../hooks/useFormAndValidation";
 
 function EditAvatarPopup({isOpen, onClose, onUpdateAvatar}) {
-  const { values, handleChange, errors, isValid, setValues, resetForm } = useFormAndValidation();
+  const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
   const avatarErrorClassName = (`popup__item-error ${errors?.avatar && "popup__item_type_error"}`);
 
   function handleSubmit(event) {

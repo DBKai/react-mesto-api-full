@@ -48,7 +48,7 @@ function Register({ onRegister }) {
         </fieldset>
         <button className="form__submit-button">Зарегистрироваться</button>
       </form>
-      <Link to="/sign-in" className="form__link-caption">Уже зарегистрированы? Войти</Link>
+      <Link to="/signin" className="form__link-caption">Уже зарегистрированы? Войти</Link>
     </div>
   );
 }
