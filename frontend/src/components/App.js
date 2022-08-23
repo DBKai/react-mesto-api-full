@@ -138,7 +138,7 @@ function App() {
         if (res.data) {
           setRegisteredIn(true);
         }
-        navigate("/sign-in");
+        navigate("/signin");
       })
       .catch(err => {
         console.log(`Ошибка: ${err}`);
@@ -227,8 +227,8 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/sign-in" element={<Login onLogin={handleOnLogin}/>}/>
-        <Route path="/sign-up" element={<Register onRegister={handleOnRegister}/>}/>
+        <Route path="/signin" element={<Login onLogin={handleOnLogin}/>}/>
+        <Route path="/signup" element={<Register onRegister={handleOnRegister}/>}/>
       </Routes>
       <EditAvatarPopup
         isOpen={isEditAvatarPopupOpen}
