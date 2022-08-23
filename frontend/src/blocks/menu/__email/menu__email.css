@@ -1,0 +1,12 @@
+.menu__email {
+  margin: 0 24px 0 0;
+  color: white;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 500px) {
+  .menu__email {
+    margin: 0 auto 18px auto;
+    display: block;
+  }
+}

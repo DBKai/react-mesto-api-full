@@ -1,0 +1,13 @@
+.form__container {
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+@media screen and (max-width: 618px) {
+  .form__container {
+    min-height: 332px;
+  }
+}

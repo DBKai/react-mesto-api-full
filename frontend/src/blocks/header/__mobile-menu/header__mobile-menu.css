@@ -1,0 +1,13 @@
+.header__mobile-menu {
+  border: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: opacity 0.2s ease-out;
+}
+
+.header__mobile-menu:hover {
+  opacity: 0.6;
+}

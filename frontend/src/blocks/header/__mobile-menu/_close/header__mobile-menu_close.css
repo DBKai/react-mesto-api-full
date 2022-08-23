@@ -1,0 +1,5 @@
+.header__mobile-menu_close {
+  width: 20px;
+  height: 20px;
+  background-image: url(../../../../images/close.svg);
+}

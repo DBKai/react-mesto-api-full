@@ -1,0 +1,11 @@
+.popup__item-container {
+  margin: 0;
+  padding: 40px 0 26px;
+  border: 0;
+}
+
+@media screen and (min-width: 680px) {
+  .popup__item-container {
+    padding: 13px 0 26px;
+  }
+}

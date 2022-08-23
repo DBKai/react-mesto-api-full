@@ -1,0 +1,20 @@
+.form__link-caption {
+  margin-top: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+.form__link-caption:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 618px) {
+  .form__link-caption {
+    margin-top: 20px;
+  }
+}

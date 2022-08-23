@@ -1,0 +1,14 @@
+.menu__button-logout {
+  padding: 0;
+  font-size: 18px;
+  line-height: 22px;
+  color: #a9a9a9;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+}
+
+.menu__button-logout:hover {
+  opacity: 0.6;
+}

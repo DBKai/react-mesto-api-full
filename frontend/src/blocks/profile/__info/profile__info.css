@@ -1,0 +1,14 @@
+.profile__info {
+  max-width: 245px;
+  padding: 26px 0 33px;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .profile__info {
+    max-width: 370px;
+    padding: 0 0 0 30px;
+    text-align: left;
+  }
+}

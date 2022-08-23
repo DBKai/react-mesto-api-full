@@ -1,0 +1,5 @@
+.header__mobile-menu_open {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../../images/burger_menu.svg);
+}

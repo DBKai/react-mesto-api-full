@@ -1,0 +1,16 @@
+.popup__item {
+  width: 100%;
+  margin-top: 5px;
+  padding: 4px 0 8px;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 17px;
+  outline: none;
+}
+
+.popup__item:first-child {
+  margin-top: 0;
+}

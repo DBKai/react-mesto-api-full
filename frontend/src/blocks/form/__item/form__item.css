@@ -1,0 +1,27 @@
+.form__item {
+  width: 100%;
+  margin-top: 28px;
+  padding-bottom: 9px;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+  font-weight: 400;
+}
+::-moz-placeholder {
+  color: #ccc;
+} /* Firefox 19+ */
+:-moz-placeholder {
+  color: #ccc;
+} /* Firefox 18- */
+:-ms-input-placeholder {
+  color: #ccc;
+}
