@@ -1,14 +1,13 @@
 class Api {
   constructor(options) {
-    this._url = options.url;
-    this._token = options.token;
+    this._url = options.url
   }
 
   getUserInfo() {
     return fetch(`${this._url}users/me`, {
       headers: {
-        authorization: this._token
-      }
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }      
     })
       .then(this._checkResponse)
   }
@@ -16,7 +15,7 @@ class Api {
   getCards() {
     return fetch(`${this._url}cards`, {
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       }
     })
       .then(this._checkResponse)
@@ -26,7 +25,7 @@ class Api {
     return fetch(`${this._url}users/me`, {
       method: 'PATCH',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -41,7 +40,7 @@ class Api {
     return fetch(`${this._url}cards`, {
       method: 'POST',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -56,7 +55,7 @@ class Api {
     return fetch(`${this._url}cards/${cardId}`, {
       method: 'DELETE',
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
     })
       .then(this._checkResponse)
@@ -66,7 +65,7 @@ class Api {
     return fetch(`${this._url}cards/${cardId}/likes`, {
       method: isLiked ? 'PUT' : 'DELETE',
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       },
     })
       .then(this._checkResponse)
@@ -76,7 +75,7 @@ class Api {
     return fetch(`${this._url}users/me/avatar`, {
       method: 'PATCH',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -96,8 +95,8 @@ class Api {
 }
 
 const api = new Api({
-  url: `https://nomoreparties.co/v1/cohort-41/`,
-  token: `f6ceccbe-01ab-42c9-9385-e3a8b94b887a`
+  url: `https://api.dkay.nomoredomains.sbs/`
 });
+
 
 export {api};

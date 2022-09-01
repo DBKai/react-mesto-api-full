@@ -79,8 +79,8 @@ function App() {
       });
   }
 
-  function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+  function handleCardLike(card) {    
+    const isLiked = card.likes.some(i => i === currentUser._id);
 
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
@@ -135,7 +135,7 @@ function App() {
   function handleOnRegister(email, password) {
     authApi.register({email, password})
       .then((res) => {
-        if (res.data) {
+        if (res.email) {
           setRegisteredIn(true);
         }
         navigate("/signin");
@@ -159,8 +159,8 @@ function App() {
     if (jwt !== null && jwt !== "undefined") {
       authApi.checkToken(jwt)
         .then(res => {
-          if (res.data) {
-            setEmail(res.data.email);
+          if (res.email) {
+            setEmail(res.email);
             setLoggedIn(true);
           }
         })
@@ -174,31 +174,26 @@ function App() {
     if (loggedIn) {
       setRegisteredIn(false);
       navigate("/");
-    }
+
+      Promise.all([api.getUserInfo(), api.getCards()])
+      .then(([user, cards]) => {
+        setCurrentUser(user);
+        setCards(cards.reverse());
+        })
+        .catch(err => {
+          console.log(`Ошибка: ${err}`);
+        });
+    }        
   }, [loggedIn]);
 
   useEffect(() => {
+    tokenCheck(); 
+
     function handleEscClose(event) {
       if (event.key === "Escape") {
         closeAllPopups();
       }
     }
-
-    tokenCheck();
-
-    Promise.all([api.getUserInfo(), api.getCards()])
-      .then(([user, cards]) => {
-        setCurrentUser({
-          _id: user._id,
-          name: user.name,
-          about: user.about,
-          avatar: user.avatar
-        });
-        setCards(cards);
-      })
-      .catch(err => {
-        console.log(`Ошибка: ${err}`);
-      });
 
     document.addEventListener('keyup', handleEscClose);
 
