@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 /* eslint no-useless-escape: 0 */
-const emailPattern = /^http(s)?:\/\/(www\.)?([\w\-]+)?(\.[\w]+)(\/)?([\/\w\-.+[\]()_~:\/%?#@!$&'*,;=]*)$/;
+const urlPattern = /^http(s)?:\/\/(www\.)?([\w\-]+)?(\.[\w]+)(\/)?([\/\w\-.+[\]()_~:\/%?#@!$&'*,;=]*)$/;
 
 const cardSchema = new mongoose.Schema({
   name: {
@@ -14,7 +14,7 @@ const cardSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator(v) {
-        return emailPattern.test(v);
+        return urlPattern.test(v);
       },
       message: (props) => `${props.value} не соответствует правильному url`,
     },

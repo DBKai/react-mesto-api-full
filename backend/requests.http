@@ -1,4 +1,4 @@
-@hostname = http://localhost
+@hostname = https://api.dkay.nomoredomains.sbs
 @port = 3000
 @host = {{hostname}}:{{port}}
 @userId = 62e29f5276f0b7d7e14b9c72

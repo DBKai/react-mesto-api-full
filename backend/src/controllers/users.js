@@ -136,7 +136,7 @@ exports.login = async (req, res, next) => {
       { expiresIn: '7d' },
     );
 
-    return res.cookie('jwt', token, { maxAge: 3600000, httpOnly: true }).send({ message: 'Успешная авторизация' }).end();
+    return res.status(200).send({ token });
   } catch (err) {
     return next(err);
   }
