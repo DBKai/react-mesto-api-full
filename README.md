@@ -6,7 +6,9 @@
 ![MONGODB](https://img.shields.io/badge/MongoDB-gray?logo=Mongodb&style=flat)
 ![EXPRESS-JS](https://img.shields.io/badge/ExpressJS-gray?logo=Express&style=flat)
 
-Домен сервера: https://dkay.nomoredomains.sbs/
+Домен backend: https://api.dkay.nomoredomains.sbs/
+
+Домен frontend: https://dkay.nomoredomains.sbs/
 
 IP-адрес сервера: 51.250.102.122
 ## Описание проекта
