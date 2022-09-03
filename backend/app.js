@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const cors = require('cors');
+const helmet = require('helmet');
 const { indexRouters } = require('./src/routes');
 const { errorsHandler } = require('./src/middlewares/errorsHandler');
 const { requestLogger, errorLogger } = require('./src/middlewares/logger');
@@ -16,6 +17,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(requestLogger);
 app.use(cors(corsOptionsDelegate));
+app.use(helmet());
+app.disable('x-powered-by');
 
 app.get('/crash-test', () => {
   setTimeout(() => {
