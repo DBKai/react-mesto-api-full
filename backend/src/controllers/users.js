@@ -97,6 +97,14 @@ exports.createUser = async (req, res, next) => {
       name, about, avatar, email, password,
     } = req.body;
 
+    // Здесь проверка на email проводится перед хэшированием пароля,
+    // т.к. хеширование пароля более ресурсоемкая задача, чем поиск по email.
+    const foundedEmail = await User.find({ email });
+
+    if (foundedEmail.length > 0) {
+      throw new DuplicateKeyError(`Пользователь с email ${email} уже существует`);
+    }
+
     const hash = await bcrypt.hash(password, 10);
     const user = await User.create({
       name, about, avatar, email, password: hash,
