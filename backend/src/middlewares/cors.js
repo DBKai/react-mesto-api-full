@@ -1,4 +1,4 @@
-const allowlist = ['https://dkay.nomoredomains.sbs'];
+const allowlist = ['http://dkay.nomoredomains.sbs', 'https://dkay.nomoredomains.sbs'];
 
 const corsOptionsDelegate = async (req, callback) => {
   let corsOptions;
