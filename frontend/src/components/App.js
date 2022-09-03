@@ -128,6 +128,7 @@ function App() {
         }
       })
       .catch(err => {
+        setIsInfoTooltipPopupOpen(true);
         console.log(`Ошибка: ${err}`);
       });
   }

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-/* eslint no-useless-escape: 0 */
-const urlPattern = /^http(s)?:\/\/(www\.)?([\w\-]+)?(\.[\w]+)(\/)?([\/\w\-.+[\]()_~:\/%?#@!$&'*,;=]*)$/;
+const { urlPattern } = require('../utils/constants');
 
 const cardSchema = new mongoose.Schema({
   name: {

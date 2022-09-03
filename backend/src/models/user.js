@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const UnauthorizedError = require('../errors/unauthorized-error');
+const { urlPattern, emailPattern } = require('../utils/constants');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -20,8 +21,7 @@ const userSchema = new mongoose.Schema({
     default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
     validate: {
       validator(v) {
-        /* eslint no-useless-escape: 0 */
-        return /^http(s)?:\/\/(www\.)?([\w\-]+)?(\.[\w]+)(\/)?([\/\w\-.+[\]()_~:\/%?#@!$&'*,;=]*)$/.test(v);
+        return urlPattern.test(v);
       },
       message: (props) => `${props.value} не соответствует правильному url`,
     },
@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     unique: true,
     validate: {
       validator(v) {
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        return emailPattern.test(v);
       },
       message: (props) => `${props.value} не соответствует правильному email`,
     },
