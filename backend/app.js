@@ -28,13 +28,6 @@ app.use(requestLogger);
 app.use(cors(corsOptionsDelegate));
 app.use(helmet());
 app.disable('x-powered-by');
-
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
-
 app.use(indexRouters);
 app.use(errorLogger);
 app.use(errors());
